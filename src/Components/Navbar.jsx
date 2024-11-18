@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { styled, useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
@@ -22,7 +21,6 @@ import MovieIcon from '@mui/icons-material/Movie';
 import HomeIcon from '@mui/icons-material/Home';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -30,14 +28,8 @@ import StarIcon from '@mui/icons-material/Star';
 import logo from '../assets/logo.png';
 import { Button } from '@mui/material';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
-import InputBase from '@mui/material/InputBase'; // Line 44:32: 'InputBase' is not defined
-import { alpha } from '@mui/material/styles'; // Line 63:18 and 65:20: 'alpha' is not defined
-import SearchIcon from '@mui/icons-material/Search'; // Line 221:14: 'SearchIcon' is not defined
-import Dialog from '@mui/material/Dialog'; // Line 223:2: 'Dialog' is not defined
-import DialogTitle from '@mui/material/DialogTitle'; // Line 235:4: 'DialogTitle' is not defined
-import DialogContent from '@mui/material/DialogContent'; // Line 236:4: 'DialogContent' is not defined
-import TextField from '@mui/material/TextField'; // Line 238:6: 'TextField' is not defined
-import DialogActions from '@mui/material/DialogActions'; // Line 251:4: 'DialogActions' is not defined\
+import InputBase from '@mui/material/InputBase'; 
+import SearchIcon from '@mui/icons-material/Search'; 
 import ExploreIcon from '@mui/icons-material/Explore';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -56,7 +48,7 @@ const SearchBox = styled('div')(({ theme, isOpen }) => ({
   // paddingRight: theme.spacing(1),
   transition: theme.transitions.create('width'),
   width: isOpen ? '200px' : 0, // Expand only if isOpen is true
-  // overflow: 'hidden',
+  overflow: 'hidden',
 }));
 
 const openedMixin = (theme) => ({
@@ -139,13 +131,13 @@ const morePages = [
   { name: 'Settings', path: '/More_pages/Settings' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ darkMode, setDarkMode }) {
   const theme = useTheme();
   // const [open, setOpen] = React.useState(false);
   // const [darkMode, setDarkMode] = React.useState(false);
   const [open, setOpen] = React.useState(false); // State for the drawer
   const [isDialogOpen, setIsDialogOpen] = React.useState(false); // State for the search dialog
-  const [darkMode, setDarkMode] = React.useState(false);
+  // const [darkMode, setDarkMode] = React.useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false); // Search bar visibility state
   const isMdUp = useMediaQuery('(min-width:960px)'); // Matches md and up screens
 
@@ -159,7 +151,12 @@ export default function Navbar() {
   };
 
   const handleThemeToggle = () => {
+    if(!darkMode)
     setDarkMode(!darkMode);
+  else
+  setDarkMode((prev) => !prev);
+
+    
   };
 
   const lightTheme = createTheme({
