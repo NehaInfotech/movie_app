@@ -817,7 +817,7 @@ const horrorMovies = [
     rating: '⭐⭐⭐⭐',
     image: 'https://m.media-amazon.com/images/M/MV5BODc4NThjMTMtNzg2Zi00M2YxLThmZmUtYWQzNDgyNWEwOTJkXkEyXkFqcGc@._V1_.jpg',
   },
-  
+
   {
     id: 3,
     title: 'Pari',
@@ -863,7 +863,7 @@ const horrorMovies = [
     rating: '⭐⭐⭐⭐',
     image: 'https://m.media-amazon.com/images/M/MV5BMDdhOWZhN2UtMDViMi00ODY5LThiMDctNmIyNzdmZTNiOTkxXkEyXkFqcGc@._V1_.jpg',
   },
-  
+
   {
     id: 8,
     title: 'Bhool Bhulaiyaa',
@@ -882,7 +882,7 @@ const horrorMovies = [
     rating: '⭐⭐⭐⭐',
     image: 'https://m.media-amazon.com/images/M/MV5BMTQzMjg3MTkxOV5BMl5BanBnXkFtZTgwNjY4NzYxNTE@._V1_.jpg',
   },
-  
+
   {
     id: 10,
     title: 'Chhorii',
@@ -1193,17 +1193,17 @@ const Allrounders = [
     language: 'Tamil',
     rating: '⭐⭐⭐⭐',
     image: 'https://i.pinimg.com/736x/8a/96/68/8a9668d96f34d1d53cb4184d68b1eb11.jpg',
-},
+  },
 
-{
-  id: 14,
-  title: 'Dishoom',
-  year: '2016',
-  runtime: '120 minutes',
-  language: 'Hindi',
-  rating: '⭐⭐⭐',
-  image: 'https://i.pinimg.com/736x/39/a7/f9/39a7f99b3a8a820948374dfe9266e74d.jpg',
-},
+  {
+    id: 14,
+    title: 'Dishoom',
+    year: '2016',
+    runtime: '120 minutes',
+    language: 'Hindi',
+    rating: '⭐⭐⭐',
+    image: 'https://i.pinimg.com/736x/39/a7/f9/39a7f99b3a8a820948374dfe9266e74d.jpg',
+  },
 
   {
     id: 15,
@@ -1242,7 +1242,7 @@ const popularMovies = [
     language: 'Hindi',
     rating: '⭐⭐⭐⭐',
     image: 'https://kashmirnewsline.net/wp-content/uploads/2022/10/images-36.jpeg',
-},
+  },
 
   {
     id: 4,
@@ -1594,7 +1594,7 @@ const comingsoon = [
     rating: '⭐⭐⭐⭐⭐',
     image: 'https://chinmaynakhwa.wordpress.com/wp-content/uploads/2023/12/wp-17032610754067326981864121982714.jpg?w=832',
   },
-  
+
 
   {
     id: 10,
@@ -2501,7 +2501,7 @@ function HomePage({ darkMode, setDarkMode }) {
       </Container>
       {/* ========================movie card======================== */}
       <Container>
-        <Box sx={{ ml: { lg: 5 , md: 10 }, mt: 3 }}>
+        <Box sx={{ ml: { lg: 5, md: 10 }, mt: 3 }}>
           <Box>
             <Typography sx={{ ml: { lg: 5, md: 10 }, mb: 3 }} variant='h5'>Top Rated ⭐</Typography>
             <MovieSlider movies={moviesTopRated} />
@@ -2518,10 +2518,9 @@ function HomePage({ darkMode, setDarkMode }) {
             <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Top animes</Typography>
             <MovieSlider movies={anime} />
           </Box>
-          <Box>
-            <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Hrror Movies</Typography>
-            <MovieSlider movies={horrorMovies} />
-          </Box>  
+        </Box>
+
+        <Box>
           <Box>
             <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Disney Movies</Typography>
             <MovieSlider movies={DisneyMovies} />
@@ -2530,41 +2529,98 @@ function HomePage({ darkMode, setDarkMode }) {
             <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Entertainment All Rounders</Typography>
             <MovieSlider movies={Allrounders} />
           </Box>
-          <Box>
-            <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Popular Movies</Typography>
-            <MovieSlider movies={popularMovies} />
-          </Box>
-          <Box>
-            <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Spacials From Us</Typography>
-            <MovieSlider movies={spacials} />
-          </Box>
-          <Box>
-            <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Comming Soon</Typography>
-            <MovieSlider movies={comingsoon} />
-          </Box>
-          <Box>
-            <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >kids courner</Typography>
-            <MovieSlider movies={kidscourner} />
-          </Box>
-          <Box>
-            <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Popular in Thriller</Typography>
-            <MovieSlider movies={popularinthriller} />
-          </Box>
-           <Box>
-            <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Popular in kids</Typography>
-            <MovieSlider movies={popularINkids} />
-          </Box>
-          <Box>
-            <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Popular in romance</Typography>
-            <MovieSlider movies={popularinRomence} />
-          </Box>
-          <Box>
-            <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Comedy Movies</Typography>
-            <MovieSlider movies={comedyMovies} />
-          </Box>
-          
+        </Box >
+        </Container>
+  <Box sx={{ mt: 5, position: 'relative' }}>
+  <img width="100%" height="350px" src="https://static.vecteezy.com/system/resources/previews/002/236/321/non_2x/movie-trendy-banner-vector.jpg" alt="" />
+  <Box sx={{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right:0,
+    width: '100%',
+    height: '97%',
+    backgroundColor: 'rgba(128, 0, 128, 0.5)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // boxShadow: '0px 0px 10px 5px rgba(128, 0, 128, 0.5)',
+    // borderRadius: '10px',
+    // padding: '20px',
+    boxSizing: 'border-box',
+    overflow: 'hidden',
+    '@media (max-width: 1200px)': {
+      padding: '10px'
+    },
+    '@media (max-width: 992px)': {
+      padding: '5px'
+    },
+    '@media (max-width: 768px)': {
+      padding: '5px'
+    },
+    '@media (max-width: 576px)': {
+      padding: '5px'
+    }
+  }}>
+    <Typography variant="h5" sx={{ color: '#fff', mb: 2, ml: 2 }}>Watch Your Favorite Movies</Typography>
+    <Button variant="contained" sx={{ backgroundColor: 'purple', color: '#fff', '&:hover': { backgroundColor: 'purple' }, ml: 2 }}>Sign In</Button>
+  </Box>
+</Box>
+
+
+
+        <Container>
+
+        
+        <Box >
+
+        <Box>
+          <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Hrror Movies</Typography>
+          <MovieSlider movies={horrorMovies} />
         </Box>
-      </Container>
+        <Box>
+          <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Disney Movies</Typography>
+          <MovieSlider movies={DisneyMovies} />
+        </Box>
+        <Box>
+          <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Entertainment All Rounders</Typography>
+          <MovieSlider movies={Allrounders} />
+        </Box>
+        <Box>
+          <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Popular Movies</Typography>
+          <MovieSlider movies={popularMovies} />
+        </Box>
+        <Box>
+          <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Spacials From Us</Typography>
+          <MovieSlider movies={spacials} />
+        </Box>
+        <Box>
+          <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Comming Soon</Typography>
+          <MovieSlider movies={comingsoon} />
+        </Box>
+        <Box>
+          <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >kids courner</Typography>
+          <MovieSlider movies={kidscourner} />
+        </Box>
+        <Box>
+          <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Popular in Thriller</Typography>
+          <MovieSlider movies={popularinthriller} />
+        </Box>
+        <Box>
+          <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Popular in kids</Typography>
+          <MovieSlider movies={popularINkids} />
+        </Box>
+        <Box>
+          <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Popular in romance</Typography>
+          <MovieSlider movies={popularinRomence} />
+        </Box>
+        <Box>
+          <Typography sx={{ ml: { lg: 3, md: 10 }, mb: 3, mt: 5 }} variant='h5' >Comedy Movies</Typography>
+          <MovieSlider movies={comedyMovies} />
+        </Box>
+
+      </Box>
+    </Container >
     </>
 
   );

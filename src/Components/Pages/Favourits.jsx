@@ -1,13 +1,49 @@
-import React from 'react'
+import React from 'react';
+import { Container, Grid, Typography, Card, CardMedia, CardContent, Button } from '@mui/material';
 
-function Favourits() {
+function Favorites({ favorites, removeFavorite }) {
   return (
-    <div>Favourits
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione enim harum quod repudiandae adipisci optio voluptatum iusto quaerat, quo necessitatibus vitae esse maxime molestias a quisquam ipsam possimus itaque perferendis saepe dicta sapiente suscipit vel? Maiores officia saepe illo provident ullam, harum facere eligendi voluptas aliquid quae vero rerum debitis, architecto, quasi ab. Atque commodi necessitatibus eaque delectus saepe maxime corporis itaque odio. Nihil, quia incidunt fugiat voluptatibus explicabo expedita praesentium vero eum eius saepe mollitia tempora vel possimus ullam culpa doloribus facilis reiciendis voluptate cupiditate odit illum adipisci, ea quod. Pariatur nisi laborum officiis accusamus ratione aspernatur, perspiciatis enim.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis perspiciatis, inventore rerum reiciendis veritatis esse aliquid, non explicabo assumenda voluptatum dicta sunt laboriosam deserunt quasi magni? Eius maxime dicta, a sapiente quia quod rem. Maiores, quidem. Accusantium, autem veniam, voluptatem quo officia, nostrum sunt impedit cumque quisquam at aut quidem aspernatur pariatur ipsum ratione voluptas dicta. Excepturi doloribus tempore totam magnam pariatur. Veritatis sint, perspiciatis suscipit exercitationem earum voluptatum. Repellendus porro cumque quas aliquam, harum rerum, corporis error aspernatur quisquam exercitationem a debitis omnis corrupti saepe temporibus expedita sunt officiis nemo, ab accusantium iusto? Iusto dolorem placeat architecto laboriosam? Impedit.
-
-    </div>
-  )
+    <Container maxWidth="lg">
+      <Typography sx={{ mt: 5 }} variant="h4" component="h2" gutterBottom>
+        Your Favourites
+      </Typography>
+      <Grid container spacing={2}>
+        {favorites.map((movie, index) => (
+          <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardMedia
+                component="img"
+                height="300"
+                image={movie.image}
+                alt="Movie Image"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {movie.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {movie.description}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Release Year: {movie.releaseYear}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Rating: {movie.rating}/10
+                </Typography>
+                <Button
+                  variant="contained"
+                  color="error"
+                  onClick={() => removeFavorite(movie)}
+                >
+                  Remove
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
+  );
 }
 
-export default Favourits
+export default Favorites;

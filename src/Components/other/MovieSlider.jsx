@@ -22,7 +22,11 @@ const MovieSlider = ({ movies }) => {
         settings: { slidesToShow: 2 },
       },
       {
-        breakpoint: 480,
+        breakpoint: 375,
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 320,
         settings: { slidesToShow: 1 },
       },
     ],
